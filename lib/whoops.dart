@@ -16,13 +16,15 @@ class _WhoopsState extends State<Whoops> {
     return Scaffold(
       appBar: AppBar(
         leadingWidth: 85,
-        leading: const Align(
-          alignment: Alignment.center,
-          child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: 10),
-            child: Text(
-              "Awww",
-              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+        leading: const FittedBox(
+          child: Align(
+            alignment: Alignment.center,
+            child: Padding(
+              padding: EdgeInsets.symmetric(horizontal: 10),
+              child: Text(
+                "Awww",
+                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+              ),
             ),
           ),
         ),
@@ -63,7 +65,7 @@ class _WhoopsState extends State<Whoops> {
                 Text(
                   "Something went wrong, please try again.",
                   style: GoogleFonts.lora(
-                      fontSize: 40, fontWeight: FontWeight.w100),
+                      fontSize: 30, fontWeight: FontWeight.w100),
                 ),
                 Padding(
                   padding: const EdgeInsets.symmetric(vertical: 10),

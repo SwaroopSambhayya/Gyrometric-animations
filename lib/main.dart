@@ -26,6 +26,7 @@ class MyApp extends StatelessWidget {
                 color: Colors.white, fontWeight: FontWeight.w500),
           ),
         ),
+        scaffoldBackgroundColor: Colors.white,
         useMaterial3: true,
         textTheme: GoogleFonts.gildaDisplayTextTheme(),
       ),
