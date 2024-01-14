@@ -1,6 +1,5 @@
-# gyro_demo
-
-A new Flutter project.
+# whoops
+Power of Flutter with real world animations
 
 ## Getting Started
 
