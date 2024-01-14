@@ -45,7 +45,7 @@ class _WhoopsState extends State<Whoops> {
                       style:
                           TextStyle(fontSize: 80, fontWeight: FontWeight.bold),
                     ),
-                    Eye(),
+                    Eye(leftEye: true),
                     Eye(),
                     Text(
                       "PS",

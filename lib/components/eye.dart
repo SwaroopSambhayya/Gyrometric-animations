@@ -4,7 +4,8 @@ import 'package:interpolate_animated/interpolate_animated.dart';
 import 'package:sensors_plus/sensors_plus.dart';
 
 class Eye extends StatefulWidget {
-  const Eye({super.key});
+  final bool leftEye;
+  const Eye({super.key, this.leftEye = false});
 
   @override
   State<Eye> createState() => _EyeState();
@@ -22,11 +23,14 @@ class _EyeState extends State<Eye> {
       alignment: Alignment.center,
       children: [
         const Balls(),
-        Transform.scale(
-          scale: 1.4,
-          child: const Image(
-            width: 60,
-            image: Svg('lib/assets/eye.svg'),
+        Transform.translate(
+          offset: Offset(widget.leftEye ? 0 : 0, 0),
+          child: Transform.scale(
+            scale: 1.25,
+            child: const Image(
+              width: 70,
+              image: Svg('lib/assets/eye.svg'),
+            ),
           ),
         ),
       ],
@@ -55,7 +59,7 @@ class _BallsState extends State<Balls> {
     if (event != null) {
       double tempX = interpolate(event.x,
           inputRange: [-2, 2],
-          outputRange: [26, 0],
+          outputRange: [30, 3],
           extrapolate: Extrapolate.clamp);
 
       double tempY = interpolate(event.y,
@@ -63,10 +67,10 @@ class _BallsState extends State<Balls> {
           outputRange: [0, 44],
           extrapolate: Extrapolate.clamp);
       ballPosition ??= Offset(tempX, tempY);
-      if ((tempX - ballPosition!.dx).abs() > 2) {
+      if ((tempX - ballPosition!.dx).abs() > 3) {
         ballPosition = Offset(tempX, ballPosition!.dy);
       }
-      if ((tempY - ballPosition!.dy).abs() > 2) {
+      if ((tempY - ballPosition!.dy).abs() > 3) {
         ballPosition = Offset(ballPosition!.dx, tempY);
       }
       return ballPosition;
